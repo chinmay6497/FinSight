@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="950" viewBox="0 0 600 950" fill="none">
+  <style>
+    .active-line { stroke-dasharray: 6; stroke-dashoffset: 120; animation: flow 4s linear infinite; }
+    .retry-line { stroke-dasharray: 4; stroke-dashoffset: 100; animation: flow 2s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: 0; } }
+  </style>
+  <rect x="0" y="0" width="600" height="950" fill="#0f172a" />
+  <text x="300" y="40" text-anchor="middle" fill="#3b82f6" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="20">inSight: Financial Reasoning Pipeline</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <path d="M0 0 L10 3.5 L0 7 Z" fill="#475569" />
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <path d="M0 0 L10 3.5 L0 7 Z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <path d="M0 0 L10 3.5 L0 7 Z" fill="#ef4444" />
+    </marker>
+  </defs>
+
+  <rect x="250" y="60" width="100" height="36" rx="18" fill="#3b82f6" />
+  <text x="300" y="83" text-anchor="middle" fill="white" font-weight="bold" font-size="12">START</text>
+  <path d="M300 96 V130" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-blue)" />
+
+  <rect x="200" y="130" width="200" height="60" rx="8" fill="#1e40af" stroke="#3b82f6" stroke-width="2" />
+  <text x="300" y="160" text-anchor="middle" fill="white" font-weight="bold" font-size="14">SUPERVISOR</text>
+  <text x="300" y="178" text-anchor="middle" fill="#93c5fd" font-size="10">ORCHESTRATION LAYER</text>
+
+  <path d="M300 190 V220" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+  <rect x="225" y="220" width="150" height="40" rx="4" fill="#334155" stroke="#475569" />
+  <text x="300" y="245" text-anchor="middle" fill="#cbd5e1" font-weight="bold" font-size="12">INTAKE_GUARD</text>
+
+  <path d="M300 260 V290" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+  <rect x="225" y="290" width="150" height="40" rx="4" fill="#334155" stroke="#475569" />
+  <text x="300" y="315" text-anchor="middle" fill="#cbd5e1" font-weight="bold" font-size="12">FRAME</text>
+
+  <path d="M300 330 V360 H120 V390" stroke="#3b82f6" stroke-width="2" class="active-line" marker-end="url(#arrow-blue)" />
+  <path d="M300 330 V360 H480 V390" stroke="#3b82f6" stroke-width="2" class="active-line" marker-end="url(#arrow-blue)" />
+
+  <rect x="45" y="390" width="150" height="60" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="2" />
+  <text x="120" y="420" text-anchor="middle" fill="#10b981" font-weight="bold" font-size="13">WEB</text>
+  <text x="120" y="438" text-anchor="middle" fill="#94a3b8" font-size="10">DuckDuckGo News</text>
+
+  <rect x="405" y="390" width="150" height="60" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="2" />
+  <text x="480" y="420" text-anchor="middle" fill="#f59e0b" font-weight="bold" font-size="13">YFINANCE</text>
+  <text x="480" y="438" text-anchor="middle" fill="#94a3b8" font-size="10">Market Metrics</text>
+
+  <path d="M120 450 V480 H300" stroke="#475569" stroke-width="2" />
+  <path d="M480 450 V480 H300 V510" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+  <rect x="225" y="510" width="150" height="45" rx="4" fill="#334155" stroke="#475569" />
+  <text x="300" y="538" text-anchor="middle" fill="#cbd5e1" font-weight="bold" font-size="12">SCORE</text>
+
+  <path d="M300 555 V585" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+  <rect x="210" y="585" width="180" height="50" rx="4" fill="#334155" stroke="#3b82f6" stroke-width="1" />
+  <text x="300" y="615" text-anchor="middle" fill="#3b82f6" font-weight="bold" font-size="13">DRAFT (LLM Writing)</text>
+
+  <path d="M300 635 V670" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-blue)" />
+  <rect x="225" y="670" width="150" height="60" rx="4" fill="#0f172a" stroke="#8b5cf6" stroke-width="2" />
+  <text x="300" y="698" text-anchor="middle" fill="#8b5cf6" font-weight="bold" font-size="14">VALIDATE</text>
+  <text x="300" y="715" text-anchor="middle" fill="#94a3b8" font-size="10">Quality Check</text>
+
+  <path d="M225 700 H10 V160 H200" stroke="#ef4444" stroke-width="2" fill="none" class="retry-line" marker-end="url(#arrow-red)" />
+  <text x="20" y="690" fill="#ef4444" font-weight="bold" font-size="11">FAIL: RETRY LOOP</text>
+
+  <path d="M300 730 V860" stroke="#10b981" stroke-width="3" marker-end="url(#arrow-blue)" />
+  <text x="310" y="760" fill="#10b981" font-weight="bold" font-size="12">PASSED</text>
+
+  <rect x="175" y="860" width="250" height="60" rx="10" fill="#065f46" stroke="#10b981" stroke-width="2" />
+  <text x="300" y="890" text-anchor="middle" fill="white" font-weight="bold" font-size="16">INVESTMENT BRIEF</text>
+  <text x="300" y="908" text-anchor="middle" fill="#a7f3d0" font-size="11">Final Score + Evidence Analysis</text>
+
+  <path d="M300 920 V940" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)" />
+  <circle cx="300" cy="944" r="10" fill="#ef4444" />
+</svg>

@@ -4,6 +4,8 @@ FinSight is a full-stack financial analysis demo that blends live market data, w
 
 ![LangGraph Flow](docs/agent-graph.svg)
 
+![inSight Architecture](docs/insight-architecture.svg)
+
 ## What It Does
 
 - Collects a user profile and generates 12 profile-aligned growth picks (USA + Canada)
