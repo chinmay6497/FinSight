@@ -75,7 +75,7 @@ npm install
 npm run dev
 ```
 
-Open: `http://localhost:5173`
+Open: https://finsight-1-9wue.onrender.com/
 
 ## Project Structure
 
