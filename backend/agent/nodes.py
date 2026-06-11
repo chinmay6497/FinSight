@@ -75,7 +75,9 @@ def _resolve_ticker_and_name(question: str) -> Tuple[str, str]:
         if words:
             lower_stop = {w.lower() for w in _COMMON_WORDS}
             filtered = [w for w in words if w.lower() not in lower_stop]
-            company_query = filtered[-1] if filtered else max(words, key=len)
+            #company_query = filtered[-1] if filtered else max(words, key=len)
+            caps = [w for w in filtered if w[0].isupper()]
+            company_query = caps[0] if caps else (filtered[-1] if filtered else max(words, key=len))
     search_cls = getattr(yf, "Search", None)
     if search_cls:
         try:
