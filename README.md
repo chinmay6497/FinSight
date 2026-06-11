@@ -2,7 +2,7 @@
 
 FinSight is a full-stack financial analysis demo that blends live market data, web news signals, and a LangGraph orchestration layer to generate a structured investment-style brief with sources.
 
-Live demo: https://finsight-1-9wue.onrender.com/
+Live demo: https://finsight-1-9wue.onrender.com/](https://finsight-1-pifh.onrender.com/
 
 <p align="center">
   <img src="docs/insight-architecture.svg" alt="inSight Architecture" />
@@ -75,7 +75,7 @@ npm install
 npm run dev
 ```
 
-Open: https://finsight-1-9wue.onrender.com/
+Open: https://finsight-1-9wue.onrender.com/](https://finsight-1-9wue.onrender.com/](https://finsight-1-pifh.onrender.com
 
 ## Project Structure
 
