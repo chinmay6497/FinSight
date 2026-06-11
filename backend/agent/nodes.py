@@ -437,12 +437,12 @@ def draft_writer_node(state: AnalystState) -> AnalystState:
         draft.setdefault("bear_case", [])
         draft.setdefault("key_risks", [])
         draft.setdefault("news_summary", [])
-        for bullet in evidence_bullets:
-            draft["bull_case"].append(f"News impact: {bullet}")
-            draft["bear_case"].append(f"News impact: {bullet}")
-            draft["key_risks"].append(f"News risk: {bullet}")
-            if len(draft["news_summary"]) < 5:
-                draft["news_summary"].append(f"Summary: {bullet}")
+        # for bullet in evidence_bullets:
+        #     draft["bull_case"].append(f"News impact: {bullet}")
+        #     draft["bear_case"].append(f"News impact: {bullet}")
+        #     draft["key_risks"].append(f"News risk: {bullet}")
+        #     if len(draft["news_summary"]) < 5:
+        #         draft["news_summary"].append(f"Summary: {bullet}")
         if not draft["bull_case"]:
             draft["bull_case"] = [f"News impact: {b}" for b in evidence_bullets]
         if not draft["bear_case"]:
