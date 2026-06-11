@@ -133,7 +133,8 @@ async def analyze(request: AnalyzeRequest):
         
         clean_summary = URL_RE.sub("", draft.get("executive_summary", "")).strip()
         clean_summary = re.sub(r"\(source:?\s*\)", "", clean_summary, flags=re.IGNORECASE).strip()
-        if "Recommendation:" not in clean_summary:
+        # if "Recommendation:" not in clean_summary:
+        if not clean_summary:
             clean_summary = "Recommendation: NO; Expected growth strength: Medium; Risk points: news volatility, data gaps."
         return {
             "ticker": shortlist.get("ticker", "UNKNOWN"),
