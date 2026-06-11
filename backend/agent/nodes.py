@@ -412,10 +412,26 @@ def draft_writer_node(state: AnalystState) -> AnalystState:
         "key_risks": [],
         "last_quarter_result": ""
     }
+    # try:
+    #     draft = json.loads(draft_text)
+    # except Exception:
+    #     draft["news_summary"] = [draft_text]
+    
+    def parse_llm_json(text):
+        text = text.strip()
+        if text.startswith("```"):
+            text = re.sub(r"^```[a-zA-Z]*\s*", "", text)
+            text = re.sub(r"\s*```$", "", text)
+        start, end = text.find("{"), text.rfind("}")
+        if start != -1 and end > start:
+            text = text[start:end + 1]
+        return json.loads(text)
+
     try:
-        draft = json.loads(draft_text)
+        draft = parse_llm_json(draft_text)
     except Exception:
         draft["news_summary"] = [draft_text]
+        
     if evidence_bullets:
         draft.setdefault("bull_case", [])
         draft.setdefault("bear_case", [])
